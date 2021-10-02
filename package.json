@@ -1,0 +1,25 @@
+{
+  "name": "education",
+  "version": "1.0.0",
+  "description": "plataforma de ensino ",
+  "main": "server.js",
+  "scripts": {
+    "client-install":"npm install  --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+    
+
+  },
+  "author": "Rodrigo Ribeiro",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^6.2.2",
+    "express": "^4.17.1",
+    "socket.io": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
