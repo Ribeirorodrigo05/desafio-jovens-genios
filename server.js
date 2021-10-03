@@ -3,13 +3,14 @@ const express = require('express');
 const handlebars = require('express-handlebars');
 const mongoose = require('mongoose');
 const path = require('path');
+const cookieParser = require('cookie-parser');
 const PORT = process.env.PORT || 3003
 
 const app = express();
 
 //module required
 
-const users = require('./routes/API/user/usersApi')
+const teachers = require('./routes/API/user/teachers')
 //static files
 app.use(express.static(path.join(__dirname, './public')))
 
@@ -28,10 +29,10 @@ app.engine('handlebars', handlebars({
     }
 }));
 
-app.set('view engine', 'handlebars')
+app.set('view engine', 'handlebars');
+app.use(cookieParser());
+app.use('/', teachers);
 
-app.use('/', users)
 
-
-app.listen(PORT, ()=> console.log(`Server is online ${PORT}`))
+app.listen(PORT, ()=> console.log(`Server is online ${PORT}`));
 

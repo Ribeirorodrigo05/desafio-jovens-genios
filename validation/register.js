@@ -19,12 +19,16 @@ module.exports = function validateRegisterInput(data) {
     errors.name = 'Name field is required';
   }
 
-  if (!Validator.isLength(data.registration, { min: 9, max: 9 })) {
-    errors.registration = 'Name must be between 2 and 30 characters';
+  if (!Validator.isLength(data.registration, { min: 9, max: 15 })) {
+    errors.registration = 'Registration must be between 9 and 15 characters';
   }
 
   if (Validator.isEmpty(data.registration)) {
-    errors.registration = 'Name field is required';
+    errors.registration = 'Registration field is required';
+  }
+
+  if (!Validator.isLength(data.discipline, { min: 5, max: 50 })) {
+    errors.discipline = 'Discipline must be between 2 and 30 characters';
   }
 
   if (Validator.isEmpty(data.email)) {

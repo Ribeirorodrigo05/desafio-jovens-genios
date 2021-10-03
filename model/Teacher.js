@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 const teacherSchema = new Schema({
     name:{
         type:String,
+        uppercase:true,
         require:true
     },
     registration:{
