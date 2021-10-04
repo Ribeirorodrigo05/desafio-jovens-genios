@@ -9,18 +9,16 @@ module.exports = function validateLogininput(data){
     data.password = !isEmpty(data.password) ? data.password : '';
      
     if (Validator.isEmpty(data.email)) {
-        errors.email = 'Name field is required';
+        errors.email = 'campo obrigatório';
       }
 
       if (!Validator.isEmail(data.email)) {
-        errors.email = 'Email is invalid';
+        errors.email = 'Email inválido';
       }
 
       if (Validator.isEmpty(data.password)) {
-        errors.password = 'Name field is required';
+        errors.password = 'campo obrigatório';
       }
-
-      
 
       return {
         errors,

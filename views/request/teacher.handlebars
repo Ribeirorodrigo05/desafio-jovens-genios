@@ -24,18 +24,28 @@
              </svg>
          </div>
          <div class="login-information display animate__animated ">
-             <form action="/login" method="POST" class="login-form display" >
-                  {{#if errors}}
-                        <div class="errors">{{errors.email}}</div>   
-                 {{/if}}
+             <form action="/login-teacher" method="POST" class="login-form display" >
+                {{#if errorsLogin}}
+             <div class="errors">{{errorsLogin.email}}</div>
+             {{/if}}
+
+             {{#if errors}}
+             <div class="errors">{{errors.email}}</div>
+             {{/if}}
+
                  <div class="login-form-name">
-                     <input type="text" name="name" id="name" class="login-input" placeholder="Email..."/>
+                     <input type="text" name="email" id="email" class="login-input" placeholder="Email..."/>
                  </div>
-                {{#if errors}}
-                        <div class="errors">{{errors.invalid}}</div>   
-                 {{/if}}
+
+                 {{#if errors}}
+             <div class="errors">{{errors.password}}</div>
+             {{/if}}
+
+             {{#if errorsLogin}}
+             <div class="errors">{{errorsLogin.invalid}}</div>
+             {{/if}}
                  <div class="login-form-name">
-                     <input type="text" name="password" id="password" class="login-input" placeholder="Password"/>
+                     <input type="password" name="password" id="password" class="login-input" placeholder="Password"/>
                  </div>
                  <div class="login-form-btn animate__animated ">
                      <button type="submit" class='login-btn'><span>Entrar</span></button>

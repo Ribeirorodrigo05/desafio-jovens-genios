@@ -1,0 +1,34 @@
+<section class="dash-teacher-container animate__animated animate__fadeIn" onload="socket()">
+    <div class="dash-teacher-content">
+        
+        <header class="dash-teacher-header display">
+            <h1>Educando!!!</h1>
+        </header>
+
+        <div class="dash-teacher-name display">
+             {{#if student}}
+                    <h3 class="teacher-name">Olá {{student.name}}</h3>
+            {{/if}}
+        </div>
+        <div class="dash-teacher-label display" id="test" onclick="testando()">
+            <span class="teacher-label">O que deseja fazer ?</span>
+        </div>
+        <div class="dash-teacher-real-time">
+            <form id="quiz">
+                    {{#if student}}
+                    <input type="hidden" name="name" id="name" value="{{student.name}}">
+                    {{/if}}
+                    <input type="text" name="question" id="question" value="Questão #01">
+                    <p>Qual o nome do carro do batman?</p>
+
+                    <input type="radio" name="option" id="anwser" value="A) Fusca">A) Fusca
+                    <input type="radio" name="option" id="anwser" value="B) BMW">B) BMW
+                    <input type="radio" name="option" id="anwser" value="C) Mob">C) Mob
+                    <input type="radio" name="option" id="anwser" value="D) Batmóvel">D) Batmóvel
+                    
+                    <button type="submit">enviar</button>
+            </form>
+        </div>
+    </div>
+    
+</section>

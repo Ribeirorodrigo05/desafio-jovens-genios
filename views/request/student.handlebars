@@ -24,11 +24,30 @@
 
          </div>
          <div class="login-information display animate__animated ">
-             <form action="" class='login-form display'>
+             <form action="/login-student" method="POST" class="login-form display" >
+                {{#if errorsLogin}}
+             <div class="errors">{{errorsLogin.email}}</div>
+             {{/if}}
+
+             {{#if errors}}
+             <div class="errors">{{errors.email}}</div>
+             {{/if}}
+
                  <div class="login-form-name">
-                     <input type="text" name="teacher" id="teacher" class="login-input" >
+                     <input type="text" name="email" id="email" class="login-input" placeholder="Email..."/>
                  </div>
-                 <div class="login-form-btn animate__animated  ">
+
+                 {{#if errors}}
+             <div class="errors">{{errors.password}}</div>
+             {{/if}}
+
+             {{#if errorsLogin}}
+             <div class="errors">{{errorsLogin.invalid}}</div>
+             {{/if}}
+                 <div class="login-form-name">
+                     <input type="password" name="password" id="password" class="login-input" placeholder="Password"/>
+                 </div>
+                 <div class="login-form-btn animate__animated ">
                      <button type="submit" class='login-btn'><span>Entrar</span></button>
                  </div>
              </form>

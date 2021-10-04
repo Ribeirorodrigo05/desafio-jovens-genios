@@ -53,7 +53,9 @@
     border-right: none;
     border-left: none;
     border-bottom: 0.1em solid #c0c0c0a8;
-    outline: none
+    background-color: #FFFFFF !important;
+    outline: none;
+
 }
 
 .login-form-btn {
@@ -73,7 +75,7 @@
 
 
 
-@media (max-width:720px) {
+@media (max-width:1024px) {
     .login-container {
 
         height: 100vh;

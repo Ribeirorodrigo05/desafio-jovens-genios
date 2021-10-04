@@ -1,0 +1,24 @@
+<section class="dash-teacher-container animate__animated animate__fadeIn" onload="socket()">
+    <div class="dash-teacher-content">
+        
+        <header class="dash-teacher-header display">
+            <h1>Educando!!!</h1>
+        </header>
+
+        <div class="dash-teacher-name display">
+             {{#if teacher}}
+                    <h3 class="teacher-name">Olá professor {{teacher.name}}</h3>
+            {{/if}}
+        </div>
+        <div class="dash-teacher-label display" id="test" onclick="testando()">
+            <span class="teacher-label">O que deseja fazer ?</span>
+        </div>
+        <div class="dash-teacher-real-time">
+            
+            <div class="quiz-messages display" >
+                    
+                    </div>
+        </div>
+    </div>
+    
+</section>

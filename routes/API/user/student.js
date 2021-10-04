@@ -7,26 +7,15 @@ const jwt = require('jsonwebtoken');
 const csurf = require('csurf');
 
 
-const validateRegisterInput = require('../../../validation/register');
+const validateRegisterInput = require('../../../validation/registerStudent');
 const validateLoginInput = require('../../../validation/login');
-const Teacher = require('../../../model/Teacher');
+const Student = require('../../../model/Student');
 const keys = require('../../../config/keys')
 
-router.get('/',(request,response)=>{
-    response.render('request/home')
-})
 
-router.get('/student',(request, response)=>{
-    response.render('request/student')
-})
+router.post('/register-student',(request, response)=>{
 
-router.get('/teacher',(request, response)=>{
-    response.render('request/teacher')
-})
-
-router.post('/register',(request, response)=>{
-
-    const {name, registration, discipline, email, password, passwordConfirm} = request.body
+    const {name, registration, grade, email, password, passwordConfirm} = request.body
 
     const {errors, isValid} = validateRegisterInput(request.body);
 
@@ -34,7 +23,7 @@ router.post('/register',(request, response)=>{
         return response.status(400).json(errors)
     }
 
-Teacher.findOne({email: request.body.email})
+Student.findOne({email:email})
     .then((user)=>{
         if(user){
             errors.email = 'Email already exists'
@@ -42,10 +31,10 @@ Teacher.findOne({email: request.body.email})
         }else{
            
 
-            const newUser = new Teacher({
+            const newUser = new Student({
                 name: name,
                 registration: registration,
-                discipline: discipline,
+                grade:grade,
                 email: email,
                 password: password,
             })
@@ -65,29 +54,29 @@ Teacher.findOne({email: request.body.email})
     })
 });
 
-router.post('/login-teacher',(request,response)=>{
+router.post('/login-student',(request,response)=>{
 
     const {email, password} = request.body
 
     const {errors, isValid} = validateLoginInput(request.body)
 
     if(!isValid){
-        return response.render('request/teacher',{errors : errors})
+        return response.render('request/student',{errors : errors})
     }
 
 
-Teacher.findOne({email}).then(user =>{
+Student.findOne({email}).then(user =>{
     const errorsLogin ={}
     if(!user){
         errorsLogin.email = 'Email não encontrado'
-        response.render('request/teacher',{errorsLogin : errorsLogin})
+        response.render('request/student',{errorsLogin : errorsLogin})
     }else{
         bcrypt.compare(password, user.password).then(isMatch =>{
             if(isMatch){
                 const payload = {
                     id: user.id,
                     name: user.name,
-                    discipline:user.discipline
+                    grade:user.grade
                 }
                 response.cookie('cookieToken',
                 jwt.sign(payload,
@@ -96,16 +85,17 @@ Teacher.findOne({email}).then(user =>{
                      {httpOnly: true})
                 )
                 
-                response.redirect('/dash-teacher')
+                response.redirect('/dash-student')
             
             }else{
                 errorsLogin.invalid = 'Email/Password is invalid'
-               response.render('request/teacher',{errorsLogin: errorsLogin})     
+               response.render('request/student',{errorsLogin: errorsLogin})     
             }
         })
     } 
     //end else
 })
 })
+
 
 module.exports = router;
