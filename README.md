@@ -8,3 +8,5 @@ Neste projeto foi usado as seguintes dependências
 
 npm i --save bcryptjs  csurf jsonwebtoken mongoose cookie-parser express express-handlebars socket.io validator 
 
+arquivo base da aplicação 
+![image](https://user-images.githubusercontent.com/47647868/136114530-a340b144-f154-4a30-b50d-5b838a9e0a55.png)
