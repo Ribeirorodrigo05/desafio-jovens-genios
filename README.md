@@ -71,8 +71,22 @@ Agora será criado a seguinte estrutura de pastas e arquivos
 ![pastas](https://user-images.githubusercontent.com/47647868/136102185-8ec2af16-f568-4d9b-9c72-394be47c54c4.png)
 
 a estrura consiste na seguinte formação o diretório public é aonde ficará os arquivos estáticos da aplicação, em seguida temos o diretório routes que contém o diretório API dentro do diretório API estão nossas rotas que atenderão ao front-end, aqui temos 2 diretórios o user e dashboard.
-  Começando pelo diretório user teremos o require de algumas dependências.
+  Começando pelo diretório user e entrando no arquivo teacher.js será feito o require de algumas dependências.
   
 ![image](https://user-images.githubusercontent.com/47647868/136104132-3483c1f8-e771-44d6-86b5-87b68231e7c8.png)
+
+Aqui também será criada uma variável para instânciar o express mas dessa vez será instanciado uma função do express chamada express.Router(), que será responsável por atender as requisições do front-end.
+
+As dependências bcryptjs e jsonwebtoken também foram setadas nessa parte do desenvolvimento e já serão usadas.
+
+O primeiro endpoint da aplicação 
+
+![image](https://user-images.githubusercontent.com/47647868/136106383-eb4e61e3-9d2a-4151-89b0-6cafe344de41.png)
+
+Nesse endpoint será enviada uma resposta para requisição que entregará a home da aplicação, mas para atender é necessário criar a seguinte estrutura de pastas na raiz da aplicação 
+
+
+
+
 
 
