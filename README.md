@@ -102,7 +102,8 @@ agora no arquivo teacher.js será criado um module.exports para podermos importa
 
 no server.js 
 
-![image](https://user-images.githubusercontent.com/47647868/136112430-a1956b66-b73c-46c1-bcea-b643e344d62f.png)
+![image](https://user-images.githubusercontent.com/47647868/136113112-a3b3642a-529c-4d3d-b0ac-fb2165405c40.png)
+
 
 e criação do middleware que atende a essa rota 
 
