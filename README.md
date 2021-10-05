@@ -33,4 +33,10 @@ Agora já pode ser o require de uma dependência chamada socketio que será resp
 
 ![image](https://user-images.githubusercontent.com/47647868/136089246-7d474c54-cfde-4ad1-8afa-fc156d63ac11.png)
 
+deve ser criada uma variável que fará o gerenciamento do serve criado a partir do http.createServe(app) e logo em seguida será crianda outra variável que será uma instância do socketio(server). Com isso a nossa variável server será uma instância da variável app que por sua vez uma instância da dependência express(framework web)
+
+![image](https://user-images.githubusercontent.com/47647868/136093421-437b74e3-2668-42e5-b738-f75215860324.png)
+
+
+
 
