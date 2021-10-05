@@ -56,5 +56,12 @@ Para controlar o front-end será usado o express-handlebars.
 ![image](https://user-images.githubusercontent.com/47647868/136095859-fe0cbe1c-9283-4e8d-8698-6fb4a92d0e7a.png)
 
 também será cirado= middleware para os arquivos estáticos 
+
 ![image](https://user-images.githubusercontent.com/47647868/136096042-ce278cd2-3d2b-4708-a1a7-b2560bf3ef06.png)
 
+#### Conectando com mongoDB
+A conexão com o banco de dados é feita usando mongoose e de forma simples 
+
+![image](https://user-images.githubusercontent.com/47647868/136096524-986569e8-5066-4427-b093-7e15d1b54fef.png)
+
+Por ser uma promisse funciona de maneira simples, se a conexão for bem sucedida imprimirá no console 'database is connected', caso seja rejeitada o bloco catch será chamado e o erro será informado no console
