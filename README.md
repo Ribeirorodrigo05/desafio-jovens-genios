@@ -37,6 +37,17 @@ deve ser criada uma variável que fará o gerenciamento do serve criado a partir
 
 ![image](https://user-images.githubusercontent.com/47647868/136093421-437b74e3-2668-42e5-b738-f75215860324.png)
 
+agora já é possível deixar o server online.
 
+![image](https://user-images.githubusercontent.com/47647868/136093907-b11e54cf-f54c-4f19-889e-ffd25745cef1.png)
+
+agora serão criados alguns middlewares para atender as requisições feitas pelo front-end. 
+
+![image](https://user-images.githubusercontent.com/47647868/136094629-edb4b775-8beb-49e8-88ad-a98d044e14e8.png)
+
+O primeiro middleware express.urlencoded() é um método embutido no express para reconhecer o objeto de solicitação recebido como strings ou matrizes.
+O segundo middleware express.json()  é um método embutido no express para reconhecer o objeto de solicitação de entrada como um objeto JSON.
+
+agora já conseguimos receber dados da aplicação front-end 
 
 
