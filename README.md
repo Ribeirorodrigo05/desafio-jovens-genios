@@ -48,6 +48,12 @@ agora serão criados alguns middlewares para atender as requisições feitas pel
 O primeiro middleware express.urlencoded() é um método embutido no express para reconhecer o objeto de solicitação recebido como strings ou matrizes.
 O segundo middleware express.json()  é um método embutido no express para reconhecer o objeto de solicitação de entrada como um objeto JSON.
 
-agora já conseguimos receber dados da aplicação front-end 
+agora já conseguimos receber dados da aplicação front-end.
 
+#### Template engine 
+Para controlar o front-end será usado o express-handlebars.
+![image](https://user-images.githubusercontent.com/47647868/136095859-fe0cbe1c-9283-4e8d-8698-6fb4a92d0e7a.png)
+
+também será cirado= middleware para os arquivos estáticos 
+![image](https://user-images.githubusercontent.com/47647868/136096042-ce278cd2-3d2b-4708-a1a7-b2560bf3ef06.png)
 
