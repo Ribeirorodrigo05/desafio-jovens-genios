@@ -113,4 +113,11 @@ com isso já é possivel acessar http:localhost:3005 como resposta teremos o seg
 
 ![image](https://user-images.githubusercontent.com/47647868/136112949-43d1aed8-952c-4ac6-bf89-f0e4542a63d4.png)
 
-dentro do template há dois links, student e teacher que apontam para 
+dentro do template há dois links, student e teacher que apontam para os seguintes endpoints "/student" e "/teacher".
+
+agora dentro do arquivo student.js e teacher serão criadas as  rota que irão atender as requisições.
+dentro student.js 
+
+![image](https://user-images.githubusercontent.com/47647868/136115097-50858509-9ae6-4d66-af48-329bde3aa56f.png)
+
+
