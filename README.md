@@ -9,8 +9,15 @@ Antes de falar sobre as dependências, a liguagem de programação utilizada par
 
 #### Iniciando o projeto 
 
-###### Dependências
+no terminal digite o seguinte comando
+###### npm i 
+para a instalação das dependências 
 
-Este projeto utilizou as seguites 
+###### Dependências
   
-  
+![depedencia](https://user-images.githubusercontent.com/47647868/136078129-c65d5721-8e11-4a06-859b-ac2ea89c7cdd.png)
+
+Com as dependências instaladas, pode ser criado o arquivo server.js que será o arquivo de entrada da aplicação
+
+dentro do server.js
+
