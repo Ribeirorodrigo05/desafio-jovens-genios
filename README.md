@@ -83,7 +83,14 @@ O primeiro endpoint da aplicação
 
 ![image](https://user-images.githubusercontent.com/47647868/136106383-eb4e61e3-9d2a-4151-89b0-6cafe344de41.png)
 
-Nesse endpoint será enviada uma resposta para requisição que entregará a home da aplicação, mas para atender é necessário criar a seguinte estrutura de pastas na raiz da aplicação 
+Nesse endpoint será enviada uma resposta para requisição que entregará a home da aplicação, mas para atender é necessário criar a seguinte estrutura de pastas na raiz da aplicação, um diretório views contendo dois diretórios, layouts e request.
+
+  Dentro do diretório layouts será criado o template principal com o nome main.handlebars que será responsável por conter os links css e scripts 
+  
+  ![image](https://user-images.githubusercontent.com/47647868/136107208-330ceb9c-a631-4c6a-9545-22127e256281.png)
+  
+  
+
 
 
 
