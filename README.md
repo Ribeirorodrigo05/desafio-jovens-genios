@@ -108,6 +108,10 @@ e criação do middleware que atende a essa rota
 
 ![image](https://user-images.githubusercontent.com/47647868/136112508-167abbc2-d743-446e-baf3-9d8c562946e5.png)
 
+com isso já é possivel acessar http:localhost:3005 como resposta teremos o seguinte template
+
+![image](https://user-images.githubusercontent.com/47647868/136112949-43d1aed8-952c-4ac6-bf89-f0e4542a63d4.png)
+
 
 
 
