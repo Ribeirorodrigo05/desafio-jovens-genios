@@ -52,6 +52,7 @@ agora já conseguimos receber dados da aplicação front-end.
 
 #### Template engine 
 Para controlar o front-end será usado o express-handlebars.
+
 ![image](https://user-images.githubusercontent.com/47647868/136095859-fe0cbe1c-9283-4e8d-8698-6fb4a92d0e7a.png)
 
 também será cirado= middleware para os arquivos estáticos 
