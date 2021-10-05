@@ -66,4 +66,7 @@ A conexão com o banco de dados é feita usando mongoose e de forma simples
 
 Por ser uma promisse funciona de maneira simples, se a conexão for bem sucedida imprimirá no console 'database is connected', caso seja rejeitada o bloco catch será chamado e o erro será informado no console
 
+Agora será criado a seguinte estrutura de pastas e arquivos
+
+![pastas](https://user-images.githubusercontent.com/47647868/136102185-8ec2af16-f568-4d9b-9c72-394be47c54c4.png)
 
