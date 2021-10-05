@@ -100,14 +100,14 @@ o arquivo css correspondente home.css em public/css
 
 agora no arquivo teacher.js será criado um module.exports para podermos importar no server.js 
 
-no server.js 
+no server.js deve-se fazer o require do arquivo teacher.js
 
-![image](https://user-images.githubusercontent.com/47647868/136113112-a3b3642a-529c-4d3d-b0ac-fb2165405c40.png)
+![image](https://user-images.githubusercontent.com/47647868/136113350-28b21025-810d-4d39-bf9c-5c7060f056f7.png)
 
 
 e criação do middleware que atende a essa rota 
 
-![image](https://user-images.githubusercontent.com/47647868/136112508-167abbc2-d743-446e-baf3-9d8c562946e5.png)
+![image](https://user-images.githubusercontent.com/47647868/136113112-a3b3642a-529c-4d3d-b0ac-fb2165405c40.png)
 
 com isso já é possivel acessar http:localhost:3005 como resposta teremos o seguinte template
 
