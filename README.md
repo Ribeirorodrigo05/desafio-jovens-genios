@@ -65,3 +65,5 @@ A conexão com o banco de dados é feita usando mongoose e de forma simples
 ![image](https://user-images.githubusercontent.com/47647868/136096524-986569e8-5066-4427-b093-7e15d1b54fef.png)
 
 Por ser uma promisse funciona de maneira simples, se a conexão for bem sucedida imprimirá no console 'database is connected', caso seja rejeitada o bloco catch será chamado e o erro será informado no console
+
+
