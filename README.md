@@ -89,7 +89,24 @@ Nesse endpoint será enviada uma resposta para requisição que entregará a hom
   
   ![image](https://user-images.githubusercontent.com/47647868/136107208-330ceb9c-a631-4c6a-9545-22127e256281.png)
   
+  No main temos link para o Bootstrap, animate-css, temos também scripts com referencia ao socket.io que será responsavél por enviar e receber os dados em tempo real no front-end.
   
+ ### Criando o primeiro template 
+  dentro do diretório request será criado um arquivo chamado home.handlebars com a seguinte estrutura 
+
+![image](https://user-images.githubusercontent.com/47647868/136111289-f85a48c0-7b30-48a7-b487-3bc21043ca91.png)
+
+o arquivo css correspondente home.css em public/css
+
+agora no arquivo teacher.js será criado um module.exports para podermos importar no server.js 
+
+no server.js 
+
+![image](https://user-images.githubusercontent.com/47647868/136112430-a1956b66-b73c-46c1-bcea-b643e344d62f.png)
+
+e criação do middleware que atende a essa rota 
+
+![image](https://user-images.githubusercontent.com/47647868/136112508-167abbc2-d743-446e-baf3-9d8c562946e5.png)
 
 
 
