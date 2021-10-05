@@ -22,3 +22,15 @@ irei falar de cada dependência de acordo com o momento usado na aplicação.
 Dentro do server.js farei o require das dependêcias principais, que será o express(framework web), express-handlebars(template engine), path(módulo core do Nodejs), mongoose(adaptador para conexão com o mongoDB). também será feita uma instância do express na variável app. 
 
 ![image](https://user-images.githubusercontent.com/47647868/136086614-a2fbeaf7-1f93-4627-894b-1f6239957fc8.png)
+
+após deve ser criada uma variável para armazenar o valor da porta que o servidor irá escutar.
+
+![image](https://user-images.githubusercontent.com/47647868/136087682-51f6b51b-a029-4613-84dd-761fccae8d93.png)
+
+A variável PORT tem como valor process.env.PORT que será usado no ambiente de produção e o 3005 que será usado em ambiente de desenvolvimento.
+
+Agora já pode ser o require de uma dependência chamada socketio que será responsável pela transmissão em tempo real. Será feito também o require do módulo http que assim como path é um módulo core.
+
+![image](https://user-images.githubusercontent.com/47647868/136089246-7d474c54-cfde-4ad1-8afa-fc156d63ac11.png)
+
+
