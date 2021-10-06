@@ -97,7 +97,7 @@ No Arquivo main.handlebars temos a referência para o seguinte script  <script s
 
 
 ### main.js
-Nesse arquivo estão as funcões que irão fazer a comunicação front-end do socket. começadndo pelo variável const socket = io() que tem o papel de apontar para port de conexão da aplicação, em seguida temos a socket.on() que recebe uma callback que espera op dado enviado pelo socket 
+Nesse arquivo estão as funcões que irão fazer a comunicação front-end do socket. começadndo pelo variável const socket = io() que tem o papel de apontar para port de conexão da aplicação, em seguida temos a socket.on() que recebe uma callback que espera o objeto enviado pelo socket 
 
 ![image](https://user-images.githubusercontent.com/47647868/136128663-163abd49-45cd-4091-b602-a3999e203f81.png)
 
