@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-*       {
+
+* {
     scroll-behavior: smooth;
-    
+
 }
 
-  
+
 
 .display {
     display: flex;
@@ -20,29 +21,29 @@
     -webkit-box-shadow: 0px 9px 11px 1px rgba(161, 161, 161, 1);
     -moz-box-shadow: 0px 9px 11px 1px rgba(161, 161, 161, 1);
     box-shadow: 0px 9px 11px 1px rgb(138, 138, 138);
-    
+
 }
 
 .dash-teacher-content {
     width: 100%;
     height: 100%;
-    
+
 }
 
 .dash-teacher-header {
     height: 20%;
-    
+
 }
 
 .img-dash {
-    
-    height:100%;
+
+    height: 100%;
 }
 
 
 .dash-teacher-name {
     height: 5%;
-    justify-content:flex-start !important;
+    justify-content: flex-start !important;
     font-size: 18px;
     font-family: 'Roboto Condensed', sans-serif;
 }
@@ -53,55 +54,64 @@
 
 .dash-teacher-label {
     height: 5%;
-    justify-content:flex-start !important;
+    justify-content: flex-start !important;
 }
 
 .teacher-label {
     font-size: 1em;
     margin-left: 3%;
     font-family: 'Roboto Condensed', sans-serif;
-    
+
 }
 
 .dash-teacher-main {
     display: flex;
-    width:100%;
-    height:67%;
+    width: 100%;
+    height: 67%;
     background-color: #ffffffd2;
-    
+
 
 }
 
 .content-student {
     width: 30%;
-    height:100%;
+    height: 100%;
     overflow-y: hidden;
+    -webkit-box-shadow: 1px 1px 3px 0px rgba(168, 168, 168, 1);
+    -moz-box-shadow: 1px 1px 3px 0px rgba(168, 168, 168, 1);
+    box-shadow: 1px 1px 3px 0px rgba(168, 168, 168, 1);
 }
+
 .main-list {
-    width:100%;
-    height:100%;
-    padding:0px !important;
-    background-color: #ececec;
+    width: 100%;
+    height: 100%;
+    padding: 0px !important;
+    background-color: #fcfcfc;
     border: 1px solid #d8d8d865;
     font-family: 'Roboto', sans-serif;
-    font-size: 0.8em
-    
+    font-size: 0.8em;
+   
+
 }
 
 .item-list {
     height: 10%;
-    padding:0px !important;
+    padding: 0px !important;
     list-style: none;
     display: flex;
-    align-items:center;
+    align-items: center;
     border-bottom: 1px solid #afafaf65;
 }
 
-.icon-list      {
+.item-list:hover{
+        background-color: #6b6b6b50
+}
+
+.icon-list {
     margin-left: 15%;
 }
 
-.item-name  {
+.item-name {
     margin-left: 10px;
 }
 
@@ -112,36 +122,38 @@
     flex-direction: column;
     overflow-y: auto;
     font-family: 'Roboto', sans-serif;
-    
+    background-color: #f3f3f3;
+
 
 }
-hr  {
+
+hr {
     color: #afafaf
 }
 
-.quiz-main-label  {
+.quiz-main-label {
     margin-left: 3%;
 }
 
 .message {
     width: 100%;
     flex-direction: column;
-    
+
 }
 
 .quiz-messages {
     flex-direction: column;
     width: 80%;
-    
-   
-    
+
+
+
 }
 
 .quiz-anwser {
     margin-top: 1%;
     margin-bottom: 5%;
     display: flex;
-    padding:2%;
+    padding: 2%;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
@@ -151,9 +163,9 @@ hr  {
     -webkit-box-shadow: 0px 4px 5px 1px rgba(122, 121, 122, 1);
     -moz-box-shadow: 0px 4px 5px 1px rgba(122, 121, 122, 1);
     box-shadow: 0px 4px 5px 1px rgba(122, 121, 122, 1);
-} 
+}
 
-.quiz-name  {
+.quiz-name {
     font-size: 15px;
 }
 
@@ -161,12 +173,12 @@ hr  {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items:flex-start;
-    border:none;
-    border-radius:10px;
-    width:97%;
+    align-items: flex-start;
+    border: none;
+    border-radius: 10px;
+    width: 97%;
     background-color: #FFF;
-    padding:2%;
+    padding: 2%;
     font-size: 13px;
 }
 
@@ -182,22 +194,22 @@ hr  {
     }
 
     .img-dash {
-        width:95%;
+        width: 95%;
     }
 
-    .quiz-messages{
-        width:100%;
-        margin:none;
+    .quiz-messages {
+        width: 100%;
+        margin: none;
     }
 
-    .message{
-        width:80%;
+    .message {
+        width: 80%;
         margin-left: 10%;
-        
+
     }
-    
+
     .content-student {
-       display:none;
+        display: none;
     }
 
     .dash-teacher-real-time {
