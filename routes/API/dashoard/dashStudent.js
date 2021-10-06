@@ -15,7 +15,7 @@ const auth = require('../../../config/auth');
 router.get('/dash-student',csrfProtection, auth, (request, response)=>{
     const {userId} = request;
 
-    Student.findOne({id: userId}).then(student => {
+    Student.findOne({_id: userId}).then(student => {
         response.render('request/dashStudent',{student : student});
 
     })

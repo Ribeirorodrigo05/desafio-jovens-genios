@@ -15,7 +15,7 @@ const authTeacher = require('../../../config/auth');
 router.get('/dash-Teacher',csrfProtection, authTeacher, (request, response)=>{
     const {userId} = request;
 
-    Teacher.findOne({id: userId}).then(teacher => {
+    Teacher.findOne({_id: userId}).then(teacher => {
         response.render('request/dashTeacher',{teacher : teacher});
     })
 
