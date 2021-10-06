@@ -106,3 +106,5 @@ Nesse arquivo estão as funcões que irão fazer a comunicação front-end do so
 
 ![image](https://user-images.githubusercontent.com/47647868/136128752-f5bea850-067b-4b54-ba38-2cb5d6dc14e9.png)
 
+com isso o funcionamento do socket.io estará completo.
+
