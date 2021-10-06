@@ -96,3 +96,13 @@ No Arquivo main.handlebars temos a referência para o seguinte script  <script s
 ![image](https://user-images.githubusercontent.com/47647868/136126853-45caffc8-a03a-49a6-90ad-9888386f95a0.png)
 
 
+### main.js
+Nesse arquivo estão as funcões que irão fazer a comunicação front-end do socket. começadndo pelo variável const socket = io() que tem o papel de apontar para port de conexão da aplicação, em seguida temos a socket.on() que recebe uma callback que espera op dado enviado pelo socket 
+
+![image](https://user-images.githubusercontent.com/47647868/136128663-163abd49-45cd-4091-b602-a3999e203f81.png)
+
+
+![image](https://user-images.githubusercontent.com/47647868/136128715-f7717c0f-528d-45c0-be74-985d615019af.png)
+
+![image](https://user-images.githubusercontent.com/47647868/136128752-f5bea850-067b-4b54-ba38-2cb5d6dc14e9.png)
+
