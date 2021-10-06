@@ -22,8 +22,33 @@ O server.js é o arquivo principal da aplicação e possui a seguinte estrutura 
 
 ![image](https://user-images.githubusercontent.com/47647868/136122461-894f90f9-16a4-4cd8-919a-99f014b42abd.png)
 
-### Endpoits 
+### Endpoits Get
 router.get('/',(request,response)=>{
     response.render('request/home')
 })
+Rota que responde o template Home da aplicação 
+
+router.get('/teacher',(request, response)=>{
+    response.render('request/teacher')
+})
+
+Rota que responde com o template de Login do usuário professor 
+
+router.get('/student',(request, response)=>{
+    response.render('request/student')
+})
+
+Rota que responde template do usuário aluno 
+
+router.get('/dash-Teacher',csrfProtection, authTeacher, (request, response)=>{
+    const {userId} = request;
+
+    Teacher.findOne({id: userId}).then(teacher => {
+        response.render('request/dashTeacher',{teacher : teacher});
+    })
+
+});
+
+
+
 
