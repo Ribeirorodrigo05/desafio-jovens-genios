@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 *       {
     scroll-behavior: smooth;
@@ -55,10 +55,14 @@
 
 
 .dash-teacher-name {
-    height: 8%;
+    height: 5%;
     justify-content:flex-start !important;
     font-size: 18px;
     font-family: 'Roboto Condensed', sans-serif;
+}
+
+.teacher-name {
+    margin-left: 3%;
 }
 
 .dash-teacher-label {
@@ -67,8 +71,8 @@
 }
 
 .teacher-label {
-    font-size: 1.2em;
-    margin-left: 5%;
+    font-size: 1em;
+    margin-left: 3%;
     font-family: 'Roboto Condensed', sans-serif;
     
 }
@@ -94,6 +98,7 @@
     background-color: #ececec;
     border: 1px solid #d8d8d865;
     font-family: 'Roboto', sans-serif;
+    font-size: 0.8em
     
 }
 
@@ -103,7 +108,6 @@
     list-style: none;
     display: flex;
     align-items:center;
-    
     border-bottom: 1px solid #afafaf65;
 }
 
@@ -121,7 +125,6 @@
     margin-left: 5%;
     flex-direction: column;
     overflow-y: auto;
-    border: 1px solid #d8d8d865;
     font-family: 'Roboto', sans-serif;
     
 
@@ -130,17 +133,22 @@ hr  {
     color: #afafaf
 }
 
+.quiz-main-label  {
+    margin-left: 3%;
+}
+
 .message {
     width: 100%;
-
     flex-direction: column;
-
-
+    
 }
 
 .quiz-messages {
     flex-direction: column;
-    width:90%
+    width: 80%;
+    
+   
+    
 }
 
 .quiz-anwser {
@@ -151,13 +159,17 @@ hr  {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    background-color: #dfdfdf;
-    border: 1px solid #c0c0c0cc;
+    background-color: #e4e4e4;
+    border: 1px solid #7979797e;
     border-radius: 10px;
     -webkit-box-shadow: 0px 4px 5px 1px rgba(122, 121, 122, 1);
     -moz-box-shadow: 0px 4px 5px 1px rgba(122, 121, 122, 1);
     box-shadow: 0px 4px 5px 1px rgba(122, 121, 122, 1);
 } 
+
+.quiz-name  {
+    font-size: 15px;
+}
 
 .quiz-body {
     display: flex;
@@ -169,14 +181,8 @@ hr  {
     width:97%;
     background-color: #FFF;
     padding:2%;
+    font-size: 13px;
 }
-
-
-
-.dash-teacher-form-btn {
-    margin-top: 3%;
-}
-
 
 
 @media (max-width:1024px) {
@@ -189,15 +195,26 @@ hr  {
 
     }
 
-    .dash-teacher-form-name {
-        width: 80%;
+    .img-dash {
+        width:95%;
+    }
+
+    .quiz-messages{
+        width:100%;
+        margin:none;
     }
 
     .message{
-        width:90%
+        width:80%;
+        margin-left: 10%;
+        
     }
-
+    
     .content-student {
        display:none;
+    }
+
+    .dash-teacher-real-time {
+        margin: 0px;
     }
 }

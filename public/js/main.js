@@ -42,10 +42,10 @@ function destroyDiv(){
   //criando a tag e inserindo no documento html
 function outputmessage(message){
     const div = document.createElement('div');
-    div.classList.add('message','dispaly');
+    div.classList.add('message');
     div.innerHTML = `<div class="meta quiz-anwser animate__animated animate__fadeInUp"> 
                             
-                                <span><b>${message.name}</b> respondeu: </span>
+                                <span  class="quiz-name">${message.name} respondeu: </span>
                                 <div class="quiz-body "> 
                                 <span> ${message.question}</span> 
                                 <span>${message.title}</span>
