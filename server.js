@@ -33,7 +33,8 @@ app.engine('handlebars', handlebars({
 
 app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, './public')))
-
+//mongodb+srv://ribeirorodrigo05:rodrigo220391@info2021.6psl5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+//mongodb://localhost/educando_quiz
 mongoose.connect('mongodb+srv://ribeirorodrigo05:rodrigo220391@info2021.6psl5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
 .then(()=> console.log('database is connected'))
 .catch(err => console.log(err))
