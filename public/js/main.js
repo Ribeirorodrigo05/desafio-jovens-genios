@@ -2,9 +2,6 @@ const quizMessages = document.querySelector('.dash-teacher-real-time')
 
 const socket = io();
 
-
-const chat = document.getElementById('quiz');
-
 socket.on('message', message =>{
     outputmessage(message)
 
@@ -12,19 +9,37 @@ socket.on('message', message =>{
     quizMessages.scrollTop = quizMessages.scrollHeight;
 })
 
+//enviando os dados pelo socket 
+function sendAnwser(){
+const chat = document.getElementById('quiz');
 chat.addEventListener('submit',(e)=>{
     e.preventDefault();
 
+    //paramos o comportamento padrão da tag e criamos um objeto com as informações
+    // que queremos enviar pelo socket 
+
     const quizObject = {
     question: e.target.question.value,
+    title: e.target.title.value,
      name: e.target.name.value,
-     
      anwser: e.target.anwser.value
+
     }
 
+    //enviando o objeto pelo socket
     socket.emit('answerQuiz', quizObject)
-})
 
+    destroyDiv()
+})
+}
+
+function destroyDiv(){
+    document.getElementById("quiz").remove();
+  }
+
+
+  //recebendo o objeto enviado pelo socket 
+  //criando a tag e inserindo no documento html
 function outputmessage(message){
     const div = document.createElement('div');
     div.classList.add('message','dispaly');
@@ -33,8 +48,9 @@ function outputmessage(message){
                                 <span><b>${message.name}</b> respondeu: </span>
                                 <div class="quiz-body "> 
                                 <span> ${message.question}</span> 
+                                <span>${message.title}</span>
                                 <span>${message.anwser}</span>
                                 </div>
                     </div>`;
-    document.querySelector('.quiz-messages').appendChild(div)
+    document.querySelector('.quiz-messages').appendChild(div); 
 }

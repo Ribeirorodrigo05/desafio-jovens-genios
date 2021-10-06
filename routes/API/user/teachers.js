@@ -1,10 +1,9 @@
-const { application, response } = require('express');
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const csurf = require('csurf');
+
 
 
 const validateRegisterInput = require('../../../validation/register');
@@ -16,9 +15,6 @@ router.get('/',(request,response)=>{
     response.render('request/home')
 })
 
-router.get('/student',(request, response)=>{
-    response.render('request/student')
-})
 
 router.get('/teacher',(request, response)=>{
     response.render('request/teacher')

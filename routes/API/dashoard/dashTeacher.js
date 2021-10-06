@@ -10,14 +10,13 @@ const io = require('socket.io')(server);
 const csrfProtection = csurf({cookie: {httpOnly: true}});
 const Teacher = require('../../../model/Teacher')
 
-const authTeacher = require('../../../config/authTeacher');
+const authTeacher = require('../../../config/auth');
 
 router.get('/dash-Teacher',csrfProtection, authTeacher, (request, response)=>{
     const {userId} = request;
 
     Teacher.findOne({id: userId}).then(teacher => {
         response.render('request/dashTeacher',{teacher : teacher});
-
     })
 
 });

@@ -1,10 +1,8 @@
-const { application, response } = require('express');
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const csurf = require('csurf');
 
 
 const validateRegisterInput = require('../../../validation/registerStudent');
@@ -12,6 +10,9 @@ const validateLoginInput = require('../../../validation/login');
 const Student = require('../../../model/Student');
 const keys = require('../../../config/keys')
 
+router.get('/student',(request, response)=>{
+    response.render('request/student')
+})
 
 router.post('/register-student',(request, response)=>{
 

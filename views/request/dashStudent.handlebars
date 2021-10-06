@@ -1,34 +1,383 @@
-<section class="dash-teacher-container animate__animated animate__fadeIn" onload="socket()">
-    <div class="dash-teacher-content">
-        
-        <header class="dash-teacher-header display">
-            <h1>Educando!!!</h1>
+<section class="dash-student-container animate__animated animate__fadeIn" onload="socket()">
+    <div class="dash-student-content">
+
+        <header class="dash-student-header display">
+            <img src="/img/logo_amarela.png" alt="" class="img-dash">
         </header>
 
-        <div class="dash-teacher-name display">
-             {{#if student}}
-                    <h3 class="teacher-name">Olá {{student.name}}</h3>
+        <div class="dash-student-name display  animate__animated animate__fadeIn animate__delay-1s">
+            {{#if student}}
+            <h5 class="student-name">Olá {{student.name}}</h5>
             {{/if}}
         </div>
-        <div class="dash-teacher-label display" id="test" onclick="testando()">
-            <span class="teacher-label">O que deseja fazer ?</span>
+        <div class="dash-student-label animate__animated animate__fadeIn animate__delay-2s">
+            <span class="student-label"> Você possui questões de goegrafia para fazer.</span>
         </div>
-        <div class="dash-teacher-real-time">
-            <form id="quiz">
-                    {{#if student}}
-                    <input type="hidden" name="name" id="name" value="{{student.name}}">
-                    {{/if}}
-                    <input type="text" name="question" id="question" value="Questão #01">
-                    <p>Qual o nome do carro do batman?</p>
+        <div class="dash-student-real-time display  animate__animated animate__fadeIn animate__delay-4s" id="realTime">
 
-                    <input type="radio" name="option" id="anwser" value="A) Fusca">A) Fusca
-                    <input type="radio" name="option" id="anwser" value="B) BMW">B) BMW
-                    <input type="radio" name="option" id="anwser" value="C) Mob">C) Mob
-                    <input type="radio" name="option" id="anwser" value="D) Batmóvel">D) Batmóvel
-                    
-                    <button type="submit">enviar</button>
+            <form id="quiz" class="quiz">
+                {{#if student}}
+                <input type="hidden" name="name" id="name" value="{{student.name}}">
+                {{/if}}
+                <input type="text" name="question" id="question" class="quiz-number-question" value="Questão #01">
+
+                <div class="quiz-questions display">
+                    <input name="title" id="title" class="quiz-title  " value="Qual o maior rio localizado no Brasil?">
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="A) Rio Amazonas" required> <span
+                        class="quiz-label">A) Rio Amazonas </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="B) Rio Paraná" required> <span
+                        class="quiz-label">B) Rio Paraná</span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="C) Rio São Francisco" required> <span
+                        class="quiz-label">C) Rio São Francisco </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="D) Rio Mamoré" required> <span
+                        class="quiz-label">D) Rio Mamoré</span>
+                </div>
+
+
+                <button type="submit" onclick="sendAnwser()" class="quiz-btn">Enviar</button>
+
+
             </form>
+
+            <form id="quiz" class="quiz">
+                {{#if student}}
+                <input type="hidden" name="name" id="name" value="{{student.name}}">
+                {{/if}}
+                <input type="text" name="question" id="question" class="quiz-number-question" value="Questão #02">
+                <div class="quiz-questions display">
+                    <input name="title" id="title" class="quiz-title  "
+                        value="Em qual continente está localizado o Brasil?">
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="A) África" required> <span
+                        class="quiz-label">A) África </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="B) Ásia" required> <span class="quiz-label">A)
+                        Ásia </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="C) Europa" required> <span
+                        class="quiz-label">A) Europa </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="D) América" required> <span
+                        class="quiz-label">A) América do sul</span>
+                </div>
+
+
+                <button type="submit" onclick="sendAnwser()" class="quiz-btn">Enviar</button>
+
+
+            </form>
+
+            <form id="quiz" class="quiz">
+                {{#if student}}
+                <input type="hidden" name="name" id="name" value="{{student.name}}">
+                {{/if}}
+                <input type="text" name="question" id="question" class="quiz-number-question" value="Questão #03">
+                <div class="quiz-questions display">
+                    <input name="title" id="title" class="quiz-title  " value="Quantas regiões possui o Brasil?">
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="A) 8" required> <span class="quiz-label">A) 8
+                    </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="B) 6" required> <span class="quiz-label">A) 6
+                    </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="C) 12" required> <span class="quiz-label">A)
+                        12</span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="D) 5" required> <span class="quiz-label">A) 5
+                    </span>
+                </div>
+
+
+                <button type="submit" onclick="sendAnwser()" class="quiz-btn">Enviar</button>
+
+
+            </form>
+
+            <form id="quiz" class="quiz">
+                {{#if student}}
+                <input type="hidden" name="name" id="name" value="{{student.name}}">
+                {{/if}}
+                <input type="text" name="question" id="question" class="quiz-number-question" value="Questão #04">
+                <div class="quiz-questions display">
+                    <input name="title" id="title" class="quiz-title  "
+                        value="Em qual região está localizado o Sertão?">
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="A) Norte" required> <span class="quiz-label">A)
+                        Norte </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="B) Centro-oeste" required> <span
+                        class="quiz-label">A) Centro-oeste </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="C) Nordeste" required> <span
+                        class="quiz-label">A) Nordeste </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="D) Sudeste" required> <span
+                        class="quiz-label">A) Sudeste </span>
+                </div>
+
+
+                <button type="submit" onclick="sendAnwser()" class="quiz-btn">Enviar</button>
+
+
+            </form>
+
+            <form id="quiz" class="quiz">
+                {{#if student}}
+                <input type="hidden" name="name" id="name" value="{{student.name}}">
+                {{/if}}
+                <input type="text" name="question" id="question" class="quiz-number-question" value="Questão #05">
+                <div class="quiz-questions display">
+                    <input name="title" id="title" class="quiz-title  "
+                        value="Qual país não faz fronteira com o Brasil?">
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="A) Argentina" required> <span
+                        class="quiz-label">A) Argentina </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="B) Uruguai" required> <span
+                        class="quiz-label">A) Uruguai </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="C) Chile" required> <span class="quiz-label">A)
+                        Chile </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="D) Suriname" required> <span
+                        class="quiz-label">A) Suriname </span>
+                </div>
+
+
+                <button type="submit" onclick="sendAnwser()" class="quiz-btn">Enviar</button>
+
+
+            </form>
+
+            <form id="quiz" class="quiz">
+                {{#if student}}
+                <input type="hidden" name="name" id="name" value="{{student.name}}">
+                {{/if}}
+                <input type="text" name="question" id="question" class="quiz-number-question" value="Questão #06">
+                <div class="quiz-questions display">
+                    <input name="title" id="title" class="quiz-title  " value="Quantos estados possui o Brasil ?">
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="A) 25" required> <span class="quiz-label">A) 25
+                    </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="B) 26" required> <span class="quiz-label">A) 26
+                    </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="C) 24" required> <span class="quiz-label">A) 24
+                    </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="D) 28" required> <span class="quiz-label">A) 28
+                    </span>
+                </div>
+
+
+                <button type="submit" onclick="sendAnwser()" class="quiz-btn">Enviar</button>
+
+
+            </form>
+
+            <form id="quiz" class="quiz">
+                {{#if student}}
+                <input type="hidden" name="name" id="name" value="{{student.name}}">
+                {{/if}}
+                <input type="text" name="question" id="question" class="quiz-number-question" value="Questão #07">
+                <div class="quiz-questions display">
+                    <input name="title" id="title" class="quiz-title  " value="qual oceano banha o Brasil?">
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="A) Atlântico" required> <span
+                        class="quiz-label">A) Atlântico </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="B) Pacífico" required> <span
+                        class="quiz-label">A) Pacífico </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="C) Mar Morto" required> <span
+                        class="quiz-label">A) Mar Morto </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="D) Índico" required> <span
+                        class="quiz-label">A) Índico </span>
+                </div>
+
+
+                <button type="submit" onclick="sendAnwser()" class="quiz-btn">Enviar</button>
+
+
+            </form>
+
+            <form id="quiz" class="quiz">
+                {{#if student}}
+                <input type="hidden" name="name" id="name" value="{{student.name}}">
+                {{/if}}
+                <input type="text" name="question" id="question" class="quiz-number-question" value="Questão #08">
+                <div class="quiz-questions display">
+                    <input name="title" id="title" class="quiz-title  "
+                        value="Quantos estados possui a região sul do Brasil?">
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="A) 4" required> <span class="quiz-label">A) 4
+                    </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="B) 5" required> <span class="quiz-label">A) 5
+                    </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="C) 8" required> <span class="quiz-label">A) 8
+                    </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="D) 3" required> <span class="quiz-label">A) 3
+                    </span>
+                </div>
+
+
+                <button type="submit" onclick="sendAnwser()" class="quiz-btn">Enviar</button>
+
+
+            </form>
+
+            <form id="quiz" class="quiz">
+                {{#if student}}
+                <input type="hidden" name="name" id="name" value="{{student.name}}">
+                {{/if}}
+                <input type="text" name="question" id="question" class="quiz-number-question" value="Questão #09">
+                <div class="quiz-questions display">
+                    <input name="title" id="title" class="quiz-title  "
+                        value="Em qual região está localizada a capital do Brasil?">
+
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="A) Norte" required> <span class="quiz-label">A)
+                        Norte </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="B) Sul" required> <span class="quiz-label">A)
+                        Sul </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="C) Sudeste" required> <span
+                        class="quiz-label">A) Sudeste </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="D) Centro-oeste" required> <span
+                        class="quiz-label">A) Centro-oeste </span>
+                </div>
+
+
+                <button type="submit" onclick="sendAnwser()" class="quiz-btn">Enviar</button>
+
+
+            </form>
+
+            <form id="quiz" class="quiz">
+                {{#if student}}
+                <input type="hidden" name="name" id="name" value="{{student.name}}">
+                {{/if}}
+                <input type="text" name="question" id="question" class="quiz-number-question" value="Questão #10">
+                <div class="quiz-questions display">
+                    <input name="title" id="title" class="quiz-title  " value="Qual a capital do estado de Pernambuco?">
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="A) Fortaleza" required> <span
+                        class="quiz-label">A) Fortaleza </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="B) Teresina" required> <span
+                        class="quiz-label">A) Teresina </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="C) Boa Vista" required> <span
+                        class="quiz-label">A) Boa Vista </span>
+                </div>
+
+                <div class="quiz-anwsers">
+                    <input type="radio" name="option" id="anwser" value="D) Recife" required> <span
+                        class="quiz-label">A) Recife </span>
+                </div>
+
+
+                <button type="submit" onclick="sendAnwser()" class="quiz-btn">Enviar</button>
+
+
+            </form>
+
+            <h2>Parabéns por ter chegado até aqui!</h2>
+            <h6>Aguarde a resposta do seu Professor.</h6>
         </div>
+
+
+
     </div>
-    
+
 </section>

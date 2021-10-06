@@ -1,6 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 *       {
     scroll-behavior: smooth;
+    
 }
+
+    ::-webkit-scrollbar{
+    width: 13px;
+    height: 13px;
+    }
+    ::-webkit-scrollbar-thumb{
+    background: #B3AFB3;
+    border-radius: 0px;
+    }
+    ::-webkit-scrollbar-thumb:hover{
+    background: #B3AFB3;
+    }
+    ::-webkit-scrollbar-track{
+    background: #F0F0F0;
+    border-radius: 0px;
+    box-shadow: inset 0px 0px 0px 0px #F0F0F0;
+    }
 
 .display {
     display: flex;
@@ -9,8 +29,9 @@
 }
 
 .dash-teacher-container {
-    height: 100vh;
-    width: 90%;
+    height: 90vh;
+    width: 70%;
+    background-color: #FFFFFF;
     -webkit-box-shadow: 0px 9px 11px 1px rgba(161, 161, 161, 1);
     -moz-box-shadow: 0px 9px 11px 1px rgba(161, 161, 161, 1);
     box-shadow: 0px 9px 11px 1px rgb(138, 138, 138);
@@ -19,55 +40,119 @@
 .dash-teacher-content {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    
 }
 
 .dash-teacher-header {
-    height: 10%;
-    background-color: #2fcc08;
+    height: 20%;
+    
+}
+
+.img-dash {
+    
+    height:100%;
 }
 
 
 .dash-teacher-name {
     height: 8%;
-    background-color: #2445a0;
+    justify-content:flex-start !important;
+    font-size: 18px;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .dash-teacher-label {
     height: 5%;
-    background-color: #a02424;
+    justify-content:flex-start !important;
 }
 
 .teacher-label {
-    font-size: 1.5em;
+    font-size: 1.2em;
+    margin-left: 5%;
+    font-family: 'Roboto Condensed', sans-serif;
+    
 }
 
-.dash-teacher-real-time {
-    height: 70%;
-    flex-direction: column;
-    overflow-y: auto;
+.dash-teacher-main {
+    display: flex;
+    width:100%;
+    height:67%;
+    background-color: #ffffffd2;
     
 
 }
 
+.content-student {
+    width: 30%;
+    height:100%;
+    overflow-y: hidden;
+}
+.main-list {
+    width:100%;
+    height:100%;
+    padding:0px !important;
+    background-color: #ececec;
+    border: 1px solid #d8d8d865;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.item-list {
+    height: 10%;
+    padding:0px !important;
+    list-style: none;
+    display: flex;
+    align-items:center;
+    
+    border-bottom: 1px solid #afafaf65;
+}
+
+.icon-list      {
+    margin-left: 15%;
+}
+
+.item-name  {
+    margin-left: 10px;
+}
+
+.dash-teacher-real-time {
+    height: 100%;
+    width: 100%;
+    margin-left: 5%;
+    flex-direction: column;
+    overflow-y: auto;
+    border: 1px solid #d8d8d865;
+    font-family: 'Roboto', sans-serif;
+    
+
+}
+hr  {
+    color: #afafaf
+}
+
 .message {
-    width: 70%;
+    width: 100%;
 
     flex-direction: column;
 
 
 }
 
+.quiz-messages {
+    flex-direction: column;
+    width:90%
+}
+
 .quiz-anwser {
     margin-top: 1%;
-    margin-bottom: 1%;
+    margin-bottom: 5%;
     display: flex;
     padding:2%;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    background-color: #dfdfdfa8;
-    border: 1px solid #c0c0c065;
+    background-color: #dfdfdf;
+    border: 1px solid #c0c0c0cc;
     border-radius: 10px;
     -webkit-box-shadow: 0px 4px 5px 1px rgba(122, 121, 122, 1);
     -moz-box-shadow: 0px 4px 5px 1px rgba(122, 121, 122, 1);
@@ -86,46 +171,16 @@
     padding:2%;
 }
 
-.quiz-messages {
-    flex-direction: column;
-}
 
-
-
-
-
-
-.dash-teacher-input {
-    width: 100%;
-    padding-top: 2.5%;
-    margin-bottom: 2%;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    border-bottom: 0.1em solid #c0c0c0a8;
-    background-color: #FFFFFF !important;
-    outline: none;
-
-}
 
 .dash-teacher-form-btn {
     margin-top: 3%;
 }
 
-.dash-teacher-btn {
-    padding: 10px 40px;
-    color: #FFFFFF;
-    border: none;
-    background-color: #2fcc08;
-    border-radius: 5px;
-
-}
-
-
-
 
 
 @media (max-width:1024px) {
+
     .dash-teacher-container {
 
         height: 100vh;
@@ -140,5 +195,9 @@
 
     .message{
         width:90%
+    }
+
+    .content-student {
+       display:none;
     }
 }

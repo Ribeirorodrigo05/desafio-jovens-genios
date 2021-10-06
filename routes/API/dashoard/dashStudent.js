@@ -10,7 +10,7 @@ const io = require('socket.io')(server);
 const csrfProtection = csurf({cookie: {httpOnly: true}});
 const Student = require('../../../model/Student')
 
-const auth = require('../../../config/authTeacher');
+const auth = require('../../../config/auth');
 
 router.get('/dash-student',csrfProtection, auth, (request, response)=>{
     const {userId} = request;

@@ -48,8 +48,6 @@ app.use('/', dashTeacher);
 app.use('/', dashStudent);
 
 io.on('connection', socket =>{
-    console.log(`${socket.id}`)
-
     socket.on('answerQuiz', (msg)=> {
         io.emit('message', msg)
     })
