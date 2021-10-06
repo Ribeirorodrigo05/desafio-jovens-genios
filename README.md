@@ -26,7 +26,9 @@ O server.js é o arquivo principal da aplicação e possui a seguinte estrutura 
 router.get('/',(request,response)=>{
     response.render('request/home')
 })
+
 Rota que responde o template Home da aplicação 
+
 
 router.get('/teacher',(request, response)=>{
     response.render('request/teacher')
@@ -34,11 +36,13 @@ router.get('/teacher',(request, response)=>{
 
 Rota que responde com o template de Login do usuário professor 
 
+
 router.get('/student',(request, response)=>{
     response.render('request/student')
 })
 
 Rota que responde template do usuário aluno 
+
 
 router.get('/dash-Teacher',csrfProtection, authTeacher, (request, response)=>{
     const {userId} = request;
@@ -48,6 +52,10 @@ router.get('/dash-Teacher',csrfProtection, authTeacher, (request, response)=>{
     })
 
 });
+
+Essa rota espera  receber o token de autenticação enviado pelo cookie que vai junto com a requisição, como segundo parâmetro temos o csrfProtetion que protege a rota de ataque cross-site mitigando o uso de fake form para obtenção de informações do servidor.
+O terceiro parâmetro é um middleware de autenticação do token aonde o token é descriptografado pela função jwt.verify(), se o token for autêntico o next() será chamado e a aplicação seguirá seu fluxo, caso seja rejeitadoo fluxo será redirecionado para a home da aplicação 
+
 
 
 
