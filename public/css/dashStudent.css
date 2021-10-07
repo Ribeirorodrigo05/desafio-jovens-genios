@@ -17,17 +17,20 @@
     -webkit-box-shadow: 0px 9px 11px 1px rgba(161, 161, 161, 1);
     -moz-box-shadow: 0px 9px 11px 1px rgba(161, 161, 161, 1);
     box-shadow: 0px 9px 11px 1px rgb(138, 138, 138);
-    background-color: #FFFFFF;
+    background-image: url('../img/background_3.png');
+    
 }
 
 .dash-student-content {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    background: #ffffffec
 }
 
 .dash-student-header {
     height: 20%;
+    background-color: #FFFFFF;
 }
 
 .img-dash {
@@ -56,6 +59,16 @@
     height: 8%;
     font-size: 8px;
     font-family: 'Roboto Condensed', sans-serif;
+}
+
+#dashMain  {
+    height:100%;
+}
+
+.dash-main-img {
+    width:80%;
+    margin-left: 10%;
+    margin-top: 10%;
 }
 
 #dashLink {
@@ -103,7 +116,7 @@ h5 {
     overflow-y: auto;
     margin-top: 20%;
     margin: auto;
-    background: url('../img/waves_blue.png');
+    
     background-size: 50%;
 
 }

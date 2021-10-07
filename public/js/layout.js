@@ -1,6 +1,9 @@
 function changeMainDisplay(){
     let dashQuestions = document.getElementById('dashQuestions')
     let dashTheme = document.getElementById('dashTheme')
+    let dashMain = document.getElementById('dashMain')
+    
+    dashMain.style.display= 'none'
 
     dashTheme.style.display = "none"
     
@@ -13,9 +16,5 @@ function changeMateryDisplay(){
     let dashQuestions = document.getElementById('dashQuestions')
     dashQuestions.style.display = "none";
     dashTheme.style.display = "block"
-    
-
-
-
-
 }
+
