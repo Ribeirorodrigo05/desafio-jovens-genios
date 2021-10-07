@@ -4,17 +4,17 @@ este projeto tem o ojetivo de criar um quiz com resposta em tempo real
 
 ### principais tecnologias utilizadas
 
-Para a criação do projeto foi utilizado as seguintes tecnologias
+Para a criação do projeto foi utilizado as seguintes tecnologias<br/>
 -NodeJs<br/>
--ExpressJS
--Express-handlebars
--Mongoose
--JsonWebtoken
--bryptjs
--csurf
--cookie-parser
--validator
--socket.io
+-ExpressJS<br/>
+-Express-handlebars<br/>
+-Mongoose<br/>
+-JsonWebtoken<br/>
+-bryptjs<br/>
+-csurf<br/>
+-cookie-parser<br/>
+-validator<br/>
+-socket.io<br/>
 
 ### Autenticação por JWT e validação com validator
 
