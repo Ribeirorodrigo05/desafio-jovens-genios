@@ -1,110 +1,27 @@
-### Desafio Jovens gênios 
+# Desafio jovens gênios
 
-dependências do projeto 
+este projeto tem o ojetivo de criar um quiz com resposta em tempo real 
 
-![image](https://user-images.githubusercontent.com/47647868/136121881-a7428460-9c69-4dc5-853b-4fc546020117.png)
+### principais tecnologias utilizadas
 
-##### Instalação 
-npm i 
+Para a criação do projeto foi utilizado as seguintes tecnologias<br/>
+-NodeJs<br/>
+-ExpressJS<br/>
+-Express-handlebars<br/>
+-Mongoose<br/>
+-JsonWebtoken<br/>
+-bryptjs<br/>
+-csurf<br/>
+-cookie-parser<br/>
+-validator<br/>
+-socket.io<br/>
 
-ou 
+### Autenticação por JWT e validação com validator
 
-npm i --save express express-handlebars bryptjs jsonwebtoken validator mongoose socket.io csurf cookie-parser 
+Para validação dos dados recebidos pelas requisições foi utilizado validator na estrategia de isEmpty que validade se um campo está com o formato correto dentro do esperado pela API, para garantir a segurança das rotas e autenticidade do usuário foi utilizado JWT, gerando o token e passando para o servidor via cookie
 
-dependência de desenvolvimento 
+### Comunicação real-time 
 
-npm i --save-dev nodemon 
+O socket.io é o responsável por realizar essa tarefa, essa tecnoligia criará um tunel entre o usuário e o servidor, aonde os dados serão enviado para o outro usuário conectado ao socket, possuindo um ótimo controle de envio e muita simplicidade na configuração o socket não se prende a enviar apenas strings mas ojetos, arrays etc.
 
-Para o front-end será utilizado a engine express-handlebars informações em https://www.npmjs.com/package/express-handlebars
-
-##### Arquivo server.js 
-O server.js é o arquivo principal da aplicação e possui a seguinte estrutura finalizada 
-
-![image](https://user-images.githubusercontent.com/47647868/136122461-894f90f9-16a4-4cd8-919a-99f014b42abd.png)
-
-### Endpoints GET
-router.get('/',(request,response)=>{
-    response.render('request/home')
-})
-
-Rota que responde o template Home da aplicação 
-
-
-router.get('/teacher',(request, response)=>{
-    response.render('request/teacher')
-})
-
-Rota que responde com o template de Login do usuário professor 
-
-
-router.get('/student',(request, response)=>{
-    response.render('request/student')
-})
-
-Rota que responde template do usuário aluno 
-
-
-router.get('/dash-Teacher',csrfProtection, authTeacher, (request, response)=>{
-    const {userId} = request;
-
-    Teacher.findOne({id: userId}).then(teacher => {
-        response.render('request/dashTeacher',{teacher : teacher});
-    })
-
-});
-
-
-router.get('/dash-student',csrfProtection, auth, (request, response)=>{
-    const {userId} = request;
-
-    Student.findOne({id: userId}).then(student => {
-        response.render('request/dashStudent',{student : student});
-
-    })
-
-});
-
-rota "/dash-Teacher", "/dash-student"
-
-Essa rota espera  receber o token de autenticação pelo cookie que vai junto com a requisição enviada, como segundo parâmetro temos o csrfProtetion que protege a rota de ataque cross-site mitigando o uso de fake form para obtenção de informações do servidor.
-O terceiro parâmetro é um middleware de autenticação do token aonde o token é descriptografado pela função jwt.verify(), se o token for autêntico o next() será chamado e a aplicação seguirá seu fluxo, caso seja rejeitadoo fluxo será redirecionado para a home da aplicação.
-
-seguindo o fluxo e serviço, a rota utiliza o modelo de usuário definido para achar o usuário com ID que seja igual ao ID vindo do token e repassado para o request dentro da função auth(), existindo o usuário o obejto é recuperado para o front-end por meio do response.render() que responde o template de dashboard do usuário 
-
-
-###Endpoints POST
-
-![image](https://user-images.githubusercontent.com/47647868/136124857-da032d37-ef61-4808-baf3-9454edc5336d.png)
-
-
-Rota "/login-student","/login-teacher"
-A rota espera receber dados em forma de objeto pelo corpo da requisição, a validação do valor de cada chave do objeto recebido é feita pelo validator que verifica se os valores correspondem as regras para registro, caso haja algum valor recebido que não seja válido o serviço retorno um erro de validação para o template front-end.
-Se todos os dados forem válidos será chamada a função bcrypt.compareO() que fará a comparação entre a senha enviada na requisição com a senha encontrada no banco de dados, se a comparação for válida será criado o payload com as informação necessárias a criação do token pela função response.cookie que contém a função jwt.sign() que criará o token, seguindo o fluxo de serviço a rota irá sofrer um redirecionamento para "/dash-studant" rota a qual já foi vista à cima.
-
-
-##Socket.io 
-Para a utilização da comunicação em tempo real entre o student e o teacher foi utilizado a dependência socket.io que tem o seguinte funcionamento. No server.js temos a sua declaração para começo de funcionamento.
-![image](https://user-images.githubusercontent.com/47647868/136126341-78697235-4aca-4604-b650-fbc0224eb77e.png)
-
-![image](https://user-images.githubusercontent.com/47647868/136126413-71ff892d-c3d0-4242-ab26-058eee237ac0.png)
-
-com isso o socket está pronto para receber as informação do front-end e repassá-la.
-
-#### Preparando o socket no front-end
-No Arquivo main.handlebars temos a referência para o seguinte script  <script src="/socket.io/socket.io.js"></script> esse arquivo dará acesso as funçoes e configurações do socket, mas é necessário criar alguns métodos para que a comunicação seja possível, temos outro script <script type="text/javascript" src="/js/main.js"></script> que nela conterá as configuração de conexão e resposta do socket o arquivo contém a seguinte estrutura:
-
-![image](https://user-images.githubusercontent.com/47647868/136126853-45caffc8-a03a-49a6-90ad-9888386f95a0.png)
-
-
-### main.js
-Nesse arquivo estão as funcões que irão fazer a comunicação front-end do socket. começadndo pelo variável const socket = io() que tem o papel de apontar para port de conexão da aplicação, em seguida temos a socket.on() que recebe uma callback que espera o objeto enviado pelo socket 
-
-![image](https://user-images.githubusercontent.com/47647868/136128663-163abd49-45cd-4091-b602-a3999e203f81.png)
-
-
-![image](https://user-images.githubusercontent.com/47647868/136128715-f7717c0f-528d-45c0-be74-985d615019af.png)
-
-![image](https://user-images.githubusercontent.com/47647868/136128752-f5bea850-067b-4b54-ba38-2cb5d6dc14e9.png)
-
-com isso o funcionamento do socket.io estará completo.
 
