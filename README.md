@@ -5,7 +5,7 @@ este projeto tem o ojetivo de criar um quiz com resposta em tempo real
 ### principais tecnologias utilizadas
 
 Para a criação do projeto foi utilizado as seguintes tecnologias
--NodeJs
+-NodeJs<br/>
 -ExpressJS
 -Express-handlebars
 -Mongoose
